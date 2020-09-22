@@ -7,6 +7,7 @@ var buttons = document.getElementsByTagName("button");
 var output = document.getElementById("output");
 var numberField = document.getElementById("numberField");
 var alarm = document.getElementById("loose");
+var body = document;
 
 startGame();
 
@@ -75,7 +76,7 @@ function checkCode() {
             }
         }
         if (i < code.length - 1) {
-            outputString += " - <span ";
+            outputString += "<span style='color:rgb(96, 192, 0); text-shadow: 0 0 10px greenyellow, 0 0 30px green;'> - </span> <span ";
         }
     }
     outputString += "</span>"
@@ -107,14 +108,13 @@ function startGame() {
 function endGame(text) {
     if (text.includes("loose")) {
         alarm.style.display = "block";
-        buttons[9].style.boxShadow = "0 0 5px green, 0 0 10px green";
-        buttons[9].style.backgroundColor = "green";
-
     }
     else if (text.includes("win")) {
         numberField.innerHTML = "Welcome!"
     }
     disableButtons();
+    buttons[9].style.boxShadow = "0 0 5px green, 0 0 10px green";
+    buttons[9].style.backgroundColor = "green";
 }
 
 function disableButtons() {
@@ -129,3 +129,32 @@ function activateButtons() {
         buttons[i].disabled = false;
     }
 }
+document.addEventListener("keydown", function () { buttons[0].focus(); buttons[0].blur(); })
+document.addEventListener("keyup", function (event) {
+    switch (event.key) {
+        case '1': buttons[0].click();
+            break;
+        case '2': buttons[1].click();
+            break;
+        case '3': buttons[2].click();
+            break;
+        case '4': buttons[3].click();
+            break;
+        case '5': buttons[4].click();
+            break;
+        case '6': buttons[5].click();
+            break;
+        case '7': buttons[6].click();
+            break;
+        case '8': buttons[7].click();
+            break;
+        case '9': buttons[8].click();
+            break;
+        case '#': buttons[9].click();
+            break;
+        case '0': buttons[10].click();
+            break;
+        case 'Enter': buttons[11].click();
+            break;
+    }
+});

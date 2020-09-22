@@ -5,7 +5,7 @@
 body {
     margin: 0;
     background-image: url("../img/metalBG.jpg");
-    background-size: 100vw;
+    background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
 }
@@ -47,6 +47,7 @@ section.game button {
     border-width: 3px;
     border-color:#868688;
     margin: 0.2rem;
+    outline: none;
 }
 
 section.game div {
@@ -126,8 +127,8 @@ section.game div {
 }
 
 #output > span {
-    border: 1px solid rgb(0, 128, 0);
-    box-shadow: 0 0 5px rgba(172, 255, 47, 0.363), 0 0 10px rgba(0, 128, 0, 0.363);
+    border: 1px solid rgb(0, 44, 0);
+    box-shadow: 0 0 5px rgba(172, 255, 47, 0.363);
 }
 
 #loose {
@@ -155,6 +156,7 @@ button:disabled {
     display: flex;
     justify-content: space-evenly;
     margin: 0 20%;
+    text-shadow: 0 -1px 1px #666666, 0 1px 1px #ffffff;
 }
 
 .desc > dl {
