@@ -31,7 +31,7 @@ section.game {
     grid-template-columns: repeat(3, 6rem);
     grid-template-rows: repeat(7, 6rem);
     width: 18rem;
-    margin: 5rem auto 3rem auto;
+    margin: 5rem auto 1rem auto;
     padding: 1rem 5rem;
     background-color: #b3b3b5;
     border: 1rem outset #929292;
