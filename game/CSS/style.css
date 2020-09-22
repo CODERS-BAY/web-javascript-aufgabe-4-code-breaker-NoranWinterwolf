@@ -1,0 +1,122 @@
+* {
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+    margin: 0;
+    background-image: url("../img/metalBG.jpg");
+    background-size: 100vw;
+    background-repeat: no-repeat;
+}
+
+main {
+    margin: auto;
+}
+
+h1 {
+    display: table;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: grey;
+    border: 10px outset gray;
+    font-size: 520%;
+    font-weight: bold;
+    color: rgb(80, 80, 80);
+    text-shadow: 0 -3px 1px #666666, 0 3px 1px #ffffff;
+}
+
+section.game {
+    display: grid;
+    grid-template-columns: repeat(3, 6rem);
+    grid-template-rows: repeat(7, 6rem);
+    width: 18rem;
+    margin: 5rem auto;
+    padding: 1rem 5rem;
+    background-color: #b3b3b5;
+    border: 1rem outset #929292;
+    border-radius: 20px;
+}
+
+section.game button {
+    color: rgb(61, 69, 78);
+    font-size: 300%;
+    text-shadow: 0 -1px 1px #66666671, 0 1px 1px #ffffff86;
+    background-color: #868688;
+    border-radius: 10px;
+    border-width: 3px;
+    border-color:#868688;
+    margin: 0.2rem;
+}
+
+section.game div {
+    color: rgb(96, 192, 0);
+    text-align: center;
+    line-height: 5.5rem;
+    vertical-align: middle;
+    background-color: rgb(23, 41, 0);
+    margin: 0.1rem;
+    border: 2px inset rgb(128, 138, 148);
+    text-shadow: 0 0 10px greenyellow, 0 0 30px green;
+}
+
+#numberField {
+    grid-column: 1/4;
+    grid-row: 1/2;
+
+    font-size: 250%;
+}
+#one {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+#two {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+#three {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+#four {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+#five {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+#six {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+#seven {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+#eight {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+#nine {
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+#hash {
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+#zero {
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+#enter {
+    grid-column: 3/4;
+    grid-row: 5/6;
+}
+#output {
+    grid-column: 1/4;
+    grid-row: 6/8;
+
+    font-size: 130%;
+    line-height: normal;
+}
