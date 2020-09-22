@@ -150,6 +150,7 @@ document.addEventListener("keyup", function (event) {
             break;
         case '9': buttons[8].click();
             break;
+        case ' ':
         case '#': buttons[9].click();
             break;
         case '0': buttons[10].click();

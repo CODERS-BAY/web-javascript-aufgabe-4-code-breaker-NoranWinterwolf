@@ -172,3 +172,7 @@ button:disabled {
     font-size: 120%;
     font-weight: 700;
 }
+
+.desc dd {
+    border: 1px solid rgba(0, 0, 0, 0.418)
+}
