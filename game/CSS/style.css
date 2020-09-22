@@ -154,8 +154,9 @@ button:disabled {
 
 .desc {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 0 20%;
+    margin: 0 10%;
     text-shadow: 0 -1px 1px #666666, 0 1px 1px #ffffff;
 }
 
@@ -165,7 +166,7 @@ button:disabled {
     border: 1rem outset #929292;
     border-radius: 20px;
     line-height: 1.5rem;
-    width: 35%;
+    width: 30rem;
 }
 
 .desc dt {
@@ -176,3 +177,4 @@ button:disabled {
 .desc dd {
     border: 1px solid rgba(0, 0, 0, 0.418)
 }
+
