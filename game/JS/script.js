@@ -108,6 +108,8 @@ function startGame() {
     for (i = 0; i < code.length; i++) {
         code[i] = Math.round(Math.random() * 9);
     }
+    userInput = [0, 0, 0];
+    numIndex = 0;
     tries = 0;
     output.innerHTML = "";
     alarm.style.display = "none";
