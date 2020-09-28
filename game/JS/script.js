@@ -126,6 +126,7 @@ function endGame(text) {
     }
     disableButtons();
     buttons[9].style.boxShadow = "0 0 5px green, 0 0 10px green";
+    buttons[9].style.background = "none";
     buttons[9].style.backgroundColor = "green";
 }
 
