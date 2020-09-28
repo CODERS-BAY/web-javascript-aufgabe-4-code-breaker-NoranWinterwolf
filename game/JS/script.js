@@ -145,7 +145,8 @@ function activateButtons() {
     }
 }
 document.addEventListener("keydown", function (event) {
-    buttons[0].focus(); buttons[0].blur();
+    buttons[0].focus();
+    buttons[0].blur();
 
     switch (event.key) {
         case '1': buttons[0].style.color = "aqua";
