@@ -7,7 +7,6 @@ var buttons = document.getElementsByTagName("button");
 var output = document.getElementById("output");
 var numberField = document.getElementById("numberField");
 var alarm = document.getElementById("loose");
-var body = document;
 
 startGame();
 
@@ -48,7 +47,6 @@ function input(e) {
             numberField.innerHTML = "<span style='text-decoration:none;'>" + userInput[0] + "</span> - <span style='text-decoration:none;'>" + userInput[1] + "</span> - <span style='text-decoration:underline;'>" + userInput[2] + "</span>"
             break;
     }
-    //numberField.innerHTML = userInput[0] + " - " + userInput[1] + " - " + userInput[2];
 }
 
 function gameAction(e) {
@@ -63,14 +61,15 @@ function gameAction(e) {
 }
 
 function checkCode() {
-    let outputString = "";
     let rightNumbers = 0;
     numberField.innerHTML = "<span style='text-decoration:underline;'>" + userInput[0] + "</span> - <span style='text-decoration:none;'>" + userInput[1] + "</span> - <span style='text-decoration:none;'>" + userInput[2] + "</span>"
     numIndex = 0;
-    outputString += "<span ";
+    output.innerHTML += "<span><span>" + userInput[0] + "</span> - <span>" + userInput[1] + "</span> - <span>" + userInput[2] + "</span></span>";
+    var numberChilds = output.lastChild.childNodes;
     for (i = 0; i < code.length; i++) {
         if (code[i] == userInput[i]) {
-            outputString += "style='color:rgb(96, 192, 0); text-shadow: 0 0 10px greenyellow, 0 0 30px green;'>" + userInput[i];
+            numberChilds[i * 2].className = '';
+            numberChilds[i * 2].classList.add("green");
             rightNumbers++;
         }
         else {
@@ -81,18 +80,17 @@ function checkCode() {
                 }
             }
             if (contains) {
-                outputString += "style='color:yellow; text-shadow: 0 0 10px yellow, 0 0 30px yellow;'>" + userInput[i];
+                numberChilds[i * 2].className = '';
+                numberChilds[i * 2].classList.add("yellow");
             }
             else {
-                outputString += "style='color:red; text-shadow: 0 0 10px red, 0 0 30px red;'>" + userInput[i];
+                numberChilds[i * 2].className = '';
+                numberChilds[i * 2].classList.add("red");
             }
         }
         if (i < code.length - 1) {
-            outputString += "<span style='color:rgb(96, 192, 0); text-shadow: 0 0 10px greenyellow, 0 0 30px green;'> - </span> <span ";
         }
     }
-    outputString += "</span>"
-    output.innerHTML += outputString;
     tries++;
     if (tries == maxTries) {
         endGame("loose");
@@ -149,95 +147,83 @@ document.addEventListener("keydown", function (event) {
     buttons[0].blur();
 
     switch (event.key) {
-        case '1': buttons[0].style.color = "aqua";
-            buttons[0].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '1':
+            buttons[0].classList.add("js-hover");
             break;
-        case '2': buttons[1].style.color = "aqua";
-            buttons[1].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '2':
+            buttons[1].classList.add("js-hover");
             break;
-        case '3': buttons[2].style.color = "aqua";
-            buttons[2].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '3':
+            buttons[2].classList.add("js-hover");
             break;
-        case '4': buttons[3].style.color = "aqua";
-            buttons[3].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '4':
+            buttons[3].classList.add("js-hover");
             break;
-        case '5': buttons[4].style.color = "aqua";
-            buttons[4].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '5':
+            buttons[4].classList.add("js-hover");
             break;
-        case '6': buttons[5].style.color = "aqua";
-            buttons[5].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '6':
+            buttons[5].classList.add("js-hover");
             break;
-        case '7': buttons[6].style.color = "aqua";
-            buttons[6].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '7':
+            buttons[6].classList.add("js-hover");
             break;
-        case '8': buttons[7].style.color = "aqua";
-            buttons[7].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '8':
+            buttons[7].classList.add("js-hover");
             break;
-        case '9': buttons[8].style.color = "aqua";
-            buttons[8].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '9':
+            buttons[8].classList.add("js-hover");
             break;
         case ' ':
-        case '#': buttons[9].style.color = "aqua";
-            buttons[9].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '#':
+            buttons[9].classList.add("js-hover");
             break;
-        case '0': buttons[10].style.color = "aqua";
-            buttons[10].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case '0':
+            buttons[10].classList.add("js-hover");
             break;
-        case 'Enter': buttons[11].style.color = "aqua";
-            buttons[11].style.textShadow = "0 0 5px aqua, 0 0 10px aqua";
+        case 'Enter':
+            buttons[11].classList.add("js-hover");
             break;
     }
 })
 document.addEventListener("keyup", function (event) {
     switch (event.key) {
         case '1': buttons[0].click();
-            buttons[0].style.color = "rgb(61, 69, 78)";
-            buttons[0].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[0].classList.remove("js-hover");
             break;
         case '2': buttons[1].click();
-            buttons[1].style.color = "rgb(61, 69, 78)";
-            buttons[1].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[1].classList.remove("js-hover");
             break;
         case '3': buttons[2].click();
-            buttons[2].style.color = "rgb(61, 69, 78)";
-            buttons[2].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[2].classList.remove("js-hover");
             break;
         case '4': buttons[3].click();
-            buttons[3].style.color = "rgb(61, 69, 78)";
-            buttons[3].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[3].classList.remove("js-hover");
             break;
         case '5': buttons[4].click();
-            buttons[4].style.color = "rgb(61, 69, 78)";
-            buttons[4].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[4].classList.remove("js-hover");
             break;
         case '6': buttons[5].click();
-            buttons[5].style.color = "rgb(61, 69, 78)";
-            buttons[5].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[5].classList.remove("js-hover");
             break;
         case '7': buttons[6].click();
-            buttons[6].style.color = "rgb(61, 69, 78)";
-            buttons[6].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[6].classList.remove("js-hover");
             break;
         case '8': buttons[7].click();
-            buttons[7].style.color = "rgb(61, 69, 78)";
-            buttons[7].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[7].classList.remove("js-hover");
             break;
         case '9': buttons[8].click();
-            buttons[8].style.color = "rgb(61, 69, 78)";
-            buttons[8].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[8].classList.remove("js-hover");
             break;
         case ' ':
         case '#': buttons[9].click();
-            buttons[9].style.color = "rgb(61, 69, 78)";
-            buttons[9].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[9].classList.remove("js-hover");
             break;
         case '0': buttons[10].click();
-            buttons[10].style.color = "rgb(61, 69, 78)";
-            buttons[10].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[10].classList.remove("js-hover");
             break;
         case 'Enter': buttons[11].click();
-            buttons[11].style.color = "rgb(61, 69, 78)";
-            buttons[11].style.textShadow = "0 -1px 1px #66666671, 0 1px 1px #ffffff86";
+            buttons[11].classList.remove("js-hover");
             break;
     }
 });
