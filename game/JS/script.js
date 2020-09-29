@@ -112,8 +112,7 @@ function startGame() {
     output.innerHTML = "";
     alarm.style.display = "none";
     numberField.innerHTML = "<span style='text-decoration:underline;'>" + userInput[0] + "</span> - <span style='text-decoration:none;'>" + userInput[1] + "</span> - <span style='text-decoration:none;'>" + userInput[2] + "</span>";
-    buttons[9].style.boxShadow = "none";
-    buttons[9].style.backgroundColor = "grey";
+    buttons[9].classList.remove("glow");
     activateButtons();
 }
 
@@ -125,9 +124,7 @@ function endGame(text) {
         numberField.innerHTML = "Welcome!"
     }
     disableButtons();
-    buttons[9].style.boxShadow = "0 0 5px green, 0 0 10px green";
-    buttons[9].style.background = "none";
-    buttons[9].style.backgroundColor = "green";
+    buttons[9].classList.add("glow");
 }
 
 function disableButtons() {

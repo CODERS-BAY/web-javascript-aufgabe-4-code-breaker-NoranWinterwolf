@@ -202,3 +202,8 @@ button:disabled {
     text-shadow: 0 0 10px yellow, 0 0 30px yellow;
 }
 
+button.glow {
+    box-shadow: 0 0 5px green, 0 0 10px green;
+    background: none !important;
+    background-color: green !important;
+}
